@@ -30,6 +30,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'carrierwave'
 
 
 group :development, :test do
