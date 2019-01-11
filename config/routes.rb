@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :resumes
   end
-  resources :products
+  resources :products do
+    member do
+      post :add_to_cart
+    end
+  end
   namespace :admin do
     resources :jobs do
       member do
