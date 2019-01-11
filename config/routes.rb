@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :resumes
   end
+  resources :products
   namespace :admin do
     resources :jobs do
       member do
