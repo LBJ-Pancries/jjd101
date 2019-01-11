@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post :add_to_cart
     end
   end
+  resources :carts
   namespace :admin do
     resources :jobs do
       member do
