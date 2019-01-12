@@ -11,7 +11,11 @@ Rails.application.routes.draw do
       post :add_to_cart
     end
   end
-  resources :carts
+  resources :carts do
+    collection do
+      post :clean
+    end
+  end
   namespace :admin do
     resources :jobs do
       member do

@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Product.create(title: "A1", description: "54平米，2、3、5、6#楼一层，", quantity: "8")
+Product.create(title: "A2", description: "51平米，2、3、5#楼二层", quantity: "6")
+Product.create(title: "A3", description: "40平米，2、3、5#楼三层", quantity: "6")
+Product.create(title: "C1", description: "87平米，6#楼二层", quantity: "2")
+Product.create(title: "B1", description: "50平米，1、4#楼一层", quantity: "4")
+Product.create(title: "B2", description: "52平米，1、4#楼二层", quantity: "8")
+Product.create(title: "B3", description: "82平米，1、4#楼三层", quantity: "4")
+Product.create(title: "方太油烟机", description: "方太", quantity: "38")
+Product.create(title: "林内热水器", description: "林内", quantity: "38")
+Product.create(title: "格力空调", description: "格力", quantity: "38")
+Product.create(title: "燃气灶", description: "方太", quantity: "38")
+Product.create(title: "浴霸", description: "", quantity: "38")
+Product.create(title: "科勒洁具", description: "科勒", quantity: "38")
+Product.create(title: "木地板", description: "水性科天", quantity: "38")
+puts "商品创建完"
