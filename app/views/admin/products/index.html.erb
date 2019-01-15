@@ -8,6 +8,7 @@
       <th>#</th>
       <th>Description</th>
       <th>Name</th>
+      <th>Quantity</th>
       <th>Price</th>
       <th width="100"> Options</th>
     </tr>
@@ -23,6 +24,7 @@
           <%= link_to(product.title, admin_product_path(product)) %>
         </td>
         <td><%= product.description %></td>
+        <td><%= product.quantity %></td>
         <td>
           <%= product.price %>
         </td>
