@@ -31,4 +31,17 @@ Product.create(title: "花洒", code: "K-7686T-4-CP", description: "齐悦挂墙
 Product.create(title: "配件", code: "JD-700", description: "马桶三件套", quantity: "38")
 Product.create(title: "配件", code: "JD-423", description: "龙头角阀", quantity: "38")
 Product.create(title: "配件", code: "JD-105", description: "台盆S/P弯", quantity: "38")
+Product.create(title: "单联单控开关", code: "S2600-1011", description: "西蒙", quantity: "16")
+Product.create(title: "单联双控开关", code: "S2600-1012", description: "西蒙", quantity: "2")
+Product.create(title: "三联单控开关", code: "S2600-1031", description: "西蒙", quantity: "9")
+Product.create(title: "双联单控开关", code: "S2600-1021", description: "西蒙", quantity: "24")
+Product.create(title: "双联双控开关", code: "S2600-1022", description: "西蒙", quantity: "29")
+Product.create(title: "三联双控开关", code: "S2600-1032", description: "西蒙", quantity: "1")
+Product.create(title: "五孔插座", code: "S2600-1084", description: "西蒙", quantity: "285")
+Product.create(title: "网络+电话插座", code: "S2100-5229", description: "西蒙", quantity: "23")
+Product.create(title: "一位电视插座", code: "S2600-5111", description: "西蒙", quantity: "5")
+Product.create(title: "二位网络插座", code: "S0400-1223", description: "西蒙", quantity: "1")
+Product.create(title: "五孔地插", code: "S0405-1201", description: "西蒙", quantity: "2")
+Product.create(title: "LED灯带", code: "N0704-0001", description: "西蒙", quantity: "28")
+
 puts "商品创建完"
