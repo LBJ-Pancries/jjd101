@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "您成功将#{@product.title}加入购物车"
     else
       flash[:warning] = "您的购物车内已有此物品"
-      redirect_to product_path
+    end
+    redirect_to product_path
   end
-
 end
