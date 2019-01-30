@@ -6,14 +6,15 @@ u.is_admin = true
 u.save
 puts "管理员创建"
 
-Product.create(title: "A1", code: "54平米", description: "2、3、5、6#楼一层,水磨石面积：27.84，木地板面积：15.21+3.3", quantity: "8")
-Product.create(title: "A2", code: "51平米", description: "2、3、5#楼二层", quantity: "6")
-Product.create(title: "A3", code: "40平米", description: "2、3、5#楼三层", quantity: "6")
-Product.create(title: "C1", code: "87平米", description: "6#楼二层", quantity: "2")
-Product.create(title: "B1", code: "50平米", description: "1、4#楼一层，水磨石面积：20.86，木地板面积：17.62", quantity: "4")
-Product.create(title: "B2", code: "52平米", description: "1、4#楼二层，水磨石面积：25.86+8.05，木地板面积：12.47", quantity: "8")
-Product.create(title: "B3", code: "82平米", description: "1、4#楼三层，水磨石面积：32.4+17.19，木地板面积：28.37", quantity: "4")
-Product.create(title: "油烟机", description: "方太", quantity: "38")
+Product.create(title: "A1户型", code: "54平米", description: "2、3、5、6#楼一层 水磨石面积：27.84 木地板面积：15.21+3.3 南侧临水驳岸：14平方 北侧入户花园面积：15平方 客厅层高：2.4米", quantity: "8")
+Product.create(title: "A2户型", code: "51平米", description: "2、3、5#楼二层 南侧临水阳台面积：9平方 餐厅层高：2.4米", quantity: "6")
+Product.create(title: "A3户型", code: "40平米", description: "2、3、5#楼三层 南侧露台：12平方 餐厅层高：2.4米", quantity: "6")
+Product.create(title: "C1户型一层", code: "51平米", description: "6#楼二层 餐厅层高：2.4米 阳台面积：9平方", quantity: "2")
+Product.create(title: "C1户型二层", code: "36平米", description: "6#楼三层 露台面积：12平方", quantity: "2")
+Product.create(title: "B1户型", code: "50平米", description: "1、4#楼一层 水磨石面积：20.86 木地板面积：17.62 南侧驳岸面积：30平方 客厅层高：2.4米", quantity: "4")
+Product.create(title: "B2户型", code: "52平米", description: "1、4#楼二层， 水磨石面积：25.86+8.05， 木地板面积：12.47 餐厅层高：2.4米 阳台面积：11平方", quantity: "8")
+Product.create(title: "B3户型", code: "82平米", description: "1、4#楼三层 水磨石面积：32.4+17.19 木地板面积：28.37 客厅层高：2.4米 北侧露台面积：18平方", quantity: "4")
+Product.create(title: "油烟机", description: "方太 产品型号 EM05 性能参数 最大风量（m3/min） 15 外观参数 烟机款式 欧式 开关/按键 机械按键 材质/工艺 不锈钢＋不沾油涂层 安装参数 外形尺寸（mm） 长900×宽530×高595", quantity: "38")
 Product.create(title: "热水器", description: "林内", quantity: "38")
 Product.create(title: "空调", description: "格力", quantity: "38")
 Product.create(title: "燃气灶", description: "方太", quantity: "38")
