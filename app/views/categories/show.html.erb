@@ -1,0 +1,39 @@
+<div class="col-md-12">
+  <div class="group">
+    <h2><%= @category.name %></h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+
+          <th>Code</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Price</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+        <tr>
+          <td>
+            <%= product.id %>
+          </td>
+
+          <td><%= product.code %></td>
+
+          <td>
+            <%= link_to(product.title, product_path(product)) %>
+          </td>
+          <td><%= product.description %></td>
+          <td><%= product.quantity %></td>
+          <td>
+            <%= product.price %>
+          </td>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

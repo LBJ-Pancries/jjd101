@@ -26,10 +26,17 @@ Rails.application.routes.draw do
       resources :resumes
     end
     resources :products
+    resources :categories do
+      resources :products
+    end
   end
   resources :cart_items
   resources :orders
   namespace :account do
     resources :orders
   end
+  resources :categories do
+    resources :products
+  end
+
 end

@@ -1,18 +1,18 @@
 <html>
-  <head>
-  	<title>Jjd101</title>
-  	<%= csrf_meta_tags %>
-  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-  	<div class="container-fluid">
-      <div class="row">
-        <%= render "common/admin.navbar" %>
-      </div>
-  		<%= render "common/flashes" %>
-  		<%= yield %>
-  	</div>
-  	<%= render "common/footer" %>
-  </body>
+<head>
+		<title>后台</title>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-stack' => true %>
+		<%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <%= render "common/admin.navbar" %>
+    </div>
+    <%= render "common/flashes" %>
+    <%= yield %>
+  </div>
+		<%= render "common/footer"%>
+</body>
 </html>

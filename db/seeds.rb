@@ -6,7 +6,16 @@ u.is_admin = true
 u.save
 puts "管理员创建"
 
-Product.create(title: "A1户型", code: "54平米", description: "2、3、5、6#楼一层 水磨石面积：27.84 木地板面积：15.21+3.3 南侧临水驳岸：14平方 北侧入户花园面积：15平方 客厅层高：2.4米", quantity: "8")
+Category.create(name: "A1户型")
+Category.create(name: "A2户型")
+Category.create(name: "A3户型")
+Category.create(name: "B1户型")
+Category.create(name: "B2户型")
+Category.create(name: "B3户型")
+Category.create(name: "C1一层户型")
+Category.create(name: "C2二层户型")
+
+Product.create(title: "A1户型", code: "54平米", description: "2、3、5、6#楼一层 水磨石面积：27.84 木地板面积：15.21+3.3 南侧临水驳岸：14平方 北侧入户花园面积：15平方 客厅层高：2.4米", quantity: "8", category_id: "1")
 Product.create(title: "A2户型", code: "51平米", description: "2、3、5#楼二层 南侧临水阳台面积：9平方 餐厅层高：2.4米", quantity: "6")
 Product.create(title: "A3户型", code: "40平米", description: "2、3、5#楼三层 南侧露台：12平方 餐厅层高：2.4米", quantity: "6")
 Product.create(title: "C1户型一层", code: "51平米", description: "6#楼二层 餐厅层高：2.4米 阳台面积：9平方", quantity: "2")
