@@ -9,7 +9,7 @@
       <th>Category</th>
       <th>Code</th>
       <th>Name</th>
-      <th>Description</th>
+
       <th>Quantity</th>
       <th>Price</th>
       <th width="100"> Options</th>
@@ -28,13 +28,15 @@
         <td>
           <%= link_to(product.title, admin_product_path(product)) %>
         </td>
-        <td><%= product.description %></td>
+        
         <td><%= product.quantity %></td>
         <td>
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-sm btn-default") %>
+          <%= link_to("Delete", admin_product_path(product), class: "btn btn-sm btn-default",
+                                method: :delete, data: { confirm: "Are you sure?"})%>
         </td>
       </tr>
     <% end %>

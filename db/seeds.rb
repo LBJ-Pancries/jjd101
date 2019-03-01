@@ -14,6 +14,11 @@ Category.create(name: "B2户型")
 Category.create(name: "B3户型")
 Category.create(name: "C1一层户型")
 Category.create(name: "C2二层户型")
+Category.create(name: "木地板")
+Category.create(name: "电器")
+Category.create(name: "开关")
+Category.create(name: "灯具")
+
 
 Product.create(title: "A1户型", code: "54平米", description: "2、3、5、6#楼一层 水磨石面积：27.84 木地板面积：15.21+3.3 南侧临水驳岸：14平方 北侧入户花园面积：15平方 客厅层高：2.4米", quantity: "8", category_id: "1")
 Product.create(title: "A2户型", code: "51平米", description: "2、3、5#楼二层 南侧临水阳台面积：9平方 餐厅层高：2.4米", quantity: "6")

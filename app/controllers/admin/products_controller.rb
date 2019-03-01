@@ -9,20 +9,20 @@ class Admin::ProductsController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+
     @product = Product.find(params[:id])
   end
 
   def new
-    @category = Category.find(params[:category_id])
+
     @product = Product.new
   end
 
   def create
-    @category = Category.find(params[:category_id])
+
     @product = Product.new(product_params)
     if @product.save
-      redirect_to admin_category_path(@category)
+      redirect_to admin_product_path(@product)
     else
       render :new
     end
@@ -42,6 +42,14 @@ class Admin::ProductsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:alert] = "Product deleted"
+    redirect_to admin_products_path
+  end
+
   private
   def product_params
     params.require(:product).permit(:title, :code, :description, :quantity, :price, :image, :category_id)
