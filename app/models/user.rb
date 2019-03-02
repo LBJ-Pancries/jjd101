@@ -10,4 +10,6 @@ class User < ApplicationRecord
 
   has_many :resumes
   has_many :orders
+  has_many :groups
+  has_many :posts
 end
