@@ -10,6 +10,12 @@ class User < ApplicationRecord
 
   has_many :resumes
   has_many :orders
-  has_many :groups
+
   has_many :posts
+
+  has_many :memberships
+  has_many :groups, :through => :memberships
+
+  has_one :profile
+  accepts_nested_attributes_for :profile
 end

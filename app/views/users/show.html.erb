@@ -1,0 +1,12 @@
+<h2><%= link_to(@user.profile.legal_name, edit_user_path(@user))%></h2>
+<p>Email: <%= @user.email %></p>
+<p>Timezone: <%= @user.time_zone %></p>
+<p>Bio: <%= simple_format @user.profile.bio %></p>
+<p>Group:
+  <% @user.groups.each do |g| %>
+    <%= g.title %>
+  <% end %>
+</p>
+<p>Group: <%= link_to(@user.groups.count, groups_path) %></p>
+<p>Post: <%= @user.posts.count %></p>
+<p>Birthday: <%= @user.profile.birthday %></p>

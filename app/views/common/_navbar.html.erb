@@ -19,7 +19,7 @@
           <%= link_to("发现", groups_path)%>
         </li>
         <li class="active">
-          <%= link_to("我")%>
+          <%= link_to("我", user_path)%>
         </li>
       </ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -42,6 +42,7 @@
                 <li><%= link_to("Admin Panel", admin_products_path)%></li>
               <% end %>
               <li><%= link_to("个人订单列表", account_orders_path)%></li>
+
               <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>

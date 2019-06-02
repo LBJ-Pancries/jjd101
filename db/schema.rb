@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190302070429) do
+ActiveRecord::Schema.define(version: 20190303003231) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "cart_id"
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 20190302070429) do
     t.integer "wage_lower_bound"
     t.string "contact_email"
     t.boolean "is_hidden", default: true
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_memberships_on_group_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -91,6 +100,20 @@ ActiveRecord::Schema.define(version: 20190302070429) do
     t.integer "category_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "legal_name"
+    t.date "birthday"
+    t.string "location"
+    t.string "education"
+    t.string "occupation"
+    t.text "bio"
+    t.text "specialty"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "resumes", force: :cascade do |t|
     t.integer "job_id"
     t.integer "user_id"
@@ -109,6 +132,7 @@ ActiveRecord::Schema.define(version: 20190302070429) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_admin", default: false
+    t.string "time_zone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
