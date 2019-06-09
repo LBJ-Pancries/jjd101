@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :groups
   resources :posts
 
+  resources :contracts
+
   resources :jobs do
     resources :resumes
   end
@@ -42,7 +44,7 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
   end
-  
+
   resources :categories do
     resources :products
   end

@@ -1,0 +1,26 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("New contract", new_contract_path, class: "btn btn-primary pull-right")%>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Tittle</td>
+        <td>Party B</td>
+        <td>Amount</td>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% @contracts.each do |contract| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(contract.title, contract_path(contract))%></td>
+          <td><%= contract.party_b %></td>
+          <td><%= contract.amount %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
