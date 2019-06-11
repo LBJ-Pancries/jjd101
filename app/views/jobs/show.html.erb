@@ -1,3 +1,4 @@
+
 <h1><%= @job.title %></h1>
 <p><%= simple_format(@job.description) %></p>
 <p><%= @job.wage_upper_bound %></p>
@@ -6,3 +7,18 @@
 <div class="text-center">
   <%= link_to("投交简历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration: underline")%>
 </div>
+<section id="company">
+   <div class = "container-fluid">
+	 <div class="row">
+	   <div class="col-sm-4 ">
+       <p class="lead"><a class="btn btn-lg btn-default" href="/contracts">合同管理</a></p>
+	   </div>
+     <div class="col-sm-4 ">
+       <p class="lead"><a class="btn btn-lg btn-default" href="/contracts">施工管理</a></p>
+	   </div>
+     <div class="col-sm-4 ">
+       <p class="lead"><a class="btn btn-lg btn-default" href="/contracts">成本管理</a></p>
+	   </div>
+	 </div>
+   </div>
+ </section>

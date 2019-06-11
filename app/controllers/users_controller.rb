@@ -25,6 +25,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:time_zone, :profile_attributes => [:id, :legal_name, :birthday, :location, :education, :occupation, :bio, :specialty] )
+    params.require(:user).permit(:time_zone, :profile_attributes => [:id, :role, :legal_name, :birthday, :location, :education, :occupation, :bio, :specialty] )
   end
 end

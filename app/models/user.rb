@@ -8,6 +8,8 @@ class User < ApplicationRecord
     is_admin
   end
 
+  # validates :role, presence: true
+
   has_many :resumes
   has_many :orders
 
