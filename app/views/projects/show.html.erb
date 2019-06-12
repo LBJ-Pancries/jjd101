@@ -1,9 +1,29 @@
 <div class="col-md-12">
   <div class="group">
+    <%= link_to("Create a Subproject", new_project_subproject_path(@project), class: "btn btn-default pull-right")%>
     <% if current_user && current_user == @project.user %>
       <%= link_to("Edit", edit_project_path(@project), class: "btn btn-primary pull-right")%>
     <% end %>
   </div>
   <h2><%= @project.title %></h2>
   <p><%= @project.description %></p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>单位工程名称</th>
+        <th>发表者</th>
+        <th>发表时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @subprojects.each do |subproject| %>
+        <tr>
+          <td><%= subproject.title %></td>
+          <td><%= subproject.user.email %></td>
+          <td><%= subproject.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
