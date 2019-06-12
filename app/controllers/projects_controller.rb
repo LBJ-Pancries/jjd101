@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :find_project_and_check_permission, only: [:edit, :update, :destroy]
   def index
     @projects = Project.all
   end
@@ -15,7 +16,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.user = current_user
-    
+
     if @project.save
       redirect_to projects_path
     else
@@ -24,26 +25,30 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @project = Project.find(params[:id])
   end
 
   def update
-    @project = Project.find(params[:id])
     if @project.update(project_params)
-      redirect_to project_path, notice: "Update Success"
+      redirect_to projects_path, notice: "Update Success"
     else
       render :edit
     end
   end
 
   def destroy
-    @project = Project.find(params[:id])
     @project.destroy
-    flash[:alert] = "Project deleted"
-    redirect_to projects_path
+    redirect_to projects_path, alert: "Project deleted"
   end
 
   private
+
+  def find_project_and_check_permission
+    @project = Project.find(params[:id])
+
+    if current_user != @project.user
+      redirect_to root_path, alert: "You have no permission"
+    end
+  end
 
   def project_params
     params.require(:project).permit(:title, :description)
