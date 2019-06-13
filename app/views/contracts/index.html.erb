@@ -24,6 +24,7 @@
             <%= link_to("Delete", contract_path(contract), class: "btn btn-sm btn-default",
                         method: :delete, data: { confirm: "Are you sure?"})%>
           </td>
+          <td><%= contract.created_at.to_s %></td>
         </tr>
       <% end %>
     </tbody>

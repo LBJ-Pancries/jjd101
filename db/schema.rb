@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190612135146) do
+ActiveRecord::Schema.define(version: 20190613224145) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "cart_id"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20190612135146) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
+    t.string "friendly_id"
+    t.integer "user_id"
+    t.index ["friendly_id"], name: "index_contracts_on_friendly_id", unique: true
   end
 
   create_table "groups", force: :cascade do |t|

@@ -4,7 +4,7 @@ class ContractsController < ApplicationController
   end
 
   def show
-    @contract = Contract.find(params[:id])
+    @contract = Contract.find_by_friendly_id!(params[:id])
   end
 
   def new
@@ -21,11 +21,11 @@ class ContractsController < ApplicationController
   end
 
   def edit
-    @contract = Contract.find(params[:id])
+    @contract = Contract.find_by_friendly_id!(params[:id])
   end
 
   def update
-    @contract = Contract.find(params[:id])
+    @contract = Contract.find_by_friendly_id!(params[:id])
     if @contract.update(contract_params)
       redirect_to contract_path, notice: "Update Success"
     else
@@ -34,7 +34,7 @@ class ContractsController < ApplicationController
   end
 
   def destroy
-    @contract = Contract.find(params[:id])
+    @contract = Contract.find_by_friendly_id!(params[:id])
     @contract.destroy
     flash[:alert] = "Contract deleted"
     redirect_to contracts_path
