@@ -33,6 +33,8 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'will_paginate'
+gem 'rails-i18n'
+gem 'devise-i18n'
 
 
 group :development, :test do

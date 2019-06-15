@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>前台</title>
+    <title>乡伴工程信息管理平台</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,6 +15,8 @@
       </div>
       <%= render "common/flashes" %>
 			<%= yield %>
+      <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %>
+      <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
 		</div>
 		<%= render "common/footer" %>
 	</body>

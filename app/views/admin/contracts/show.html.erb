@@ -1,8 +1,6 @@
 <div class="col-md-12">
   <div class="group">
-    <% if current_user && current_user == contract.user %>
-      <%= link_to("Edit", edit_contract_path(@contract), class: "btn btn-primary pull-right")%>
-    <% end %>
+    <%= link_to("Edit", edit_contract_path(@contract), class: "btn btn-primary pull-right")%>
   </div>
   <h2><%= @contract.title %></h2>
   <p><%= @contract.party_a %></p>

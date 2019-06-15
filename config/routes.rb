@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     end
   end
   namespace :admin do
+    resources :contracts
+    resources :products
     resources :groups
     resources :users do
       resource :profile, :controller => "user_profile"
@@ -37,7 +39,7 @@ Rails.application.routes.draw do
       end
       resources :resumes
     end
-    resources :products
+
     resources :categories do
       resources :products
     end

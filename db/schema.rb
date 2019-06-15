@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190613224145) do
+ActiveRecord::Schema.define(version: 20190614135257) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "cart_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20190613224145) do
     t.string "title"
     t.string "friendly_id"
     t.integer "user_id"
+    t.string "status", default: "draft"
     t.index ["friendly_id"], name: "index_contracts_on_friendly_id", unique: true
   end
 

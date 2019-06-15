@@ -1,28 +1,34 @@
 <div class="col-md-12">
+  <h2><%= t("contract_list")%></h2>
   <div class="group">
-    <%= link_to("New contract", new_contract_path, class: "btn btn-primary pull-right")%>
+    <%= link_to(t("new_contract"), new_contract_path, class: "btn btn-primary pull-right")%>
   </div>
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>#</td>
-        <td>Title</td>
-        <td>Party B</td>
-        <td>Amount</td>
-
+        <td>ID</td>
+        <td><%= t("title") %></td>
+        <td><%= t("party_b")%></td>
+        <td><%= t("amount")%></td>
+        <td>Status</td>
+        <td>Creator</td>
       </tr>
     </thead>
     <tbody>
       <% @contracts.each do |contract| %>
         <tr>
-          <td>#</td>
+          <td><%= contract.id %></td>
           <td><%= link_to(contract.title, contract_path(contract))%></td>
           <td><%= contract.party_b %></td>
           <td><%= contract.amount %></td>
+          <td><%= contract.status%></td>
+          <td><%= contract.user.email %></td>
           <td>
-            <%= link_to("Edit", edit_contract_path(contract), class: "btn btn-sm btn-default")%>
-            <%= link_to("Delete", contract_path(contract), class: "btn btn-sm btn-default",
-                        method: :delete, data: { confirm: "Are you sure?"})%>
+            <% if current_user && current_user == contract.user %>
+              <%= link_to("Edit", edit_contract_path(contract), class: "btn btn-sm btn-default")%>
+              <%= link_to("Delete", contract_path(contract), class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you sure?"})%>
+            <% end %>
           </td>
           <td><%= contract.created_at.to_s %></td>
         </tr>
