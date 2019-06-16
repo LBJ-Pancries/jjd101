@@ -14,3 +14,4 @@
 
   admin:
     contract_list: 合同列表管理
+    role: 职位

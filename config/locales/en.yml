@@ -10,3 +10,4 @@ en:
 
   admin:
     contract_list: Admin Contract List
+    role: Role
