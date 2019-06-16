@@ -2,7 +2,7 @@ class Admin::ContractsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-    @contracts = Contract.all
+    @contracts = Contract.rank(:row_order).all
   end
 
   def show

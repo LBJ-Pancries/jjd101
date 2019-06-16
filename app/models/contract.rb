@@ -13,6 +13,9 @@ class Contract < ApplicationRecord
 
   belongs_to :user
 
+  include RankedModel
+  ranks :row_order
+
   protected
 
   def generate_friendly_id

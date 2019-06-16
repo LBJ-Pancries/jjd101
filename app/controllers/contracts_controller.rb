@@ -1,7 +1,7 @@
 class ContractsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create]
   def index
-    @contracts = Contract.all
+    @contracts = Contract.rank(:row_order).all
   end
 
   def show
