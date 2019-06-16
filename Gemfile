@@ -35,6 +35,7 @@ gem 'mini_magick'
 gem 'will_paginate'
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'select2-rails'
 
 
 group :development, :test do

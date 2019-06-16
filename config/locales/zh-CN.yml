@@ -6,6 +6,11 @@
   title: 标题
   party_b: 乙方
   amount: 总额
+  contract:
+    status:
+      draft: 草稿
+      public: 公开
+      private: 私密
 
   admin:
     contract_list: 合同列表管理

@@ -1,5 +1,6 @@
 <%= simple_form_for @contract do |f| %>
   <div class="form-contract">
+    <%= f.association :category %>
     <%= f.input :title, input_html: { class: "form-control"}%>
     <%= f.input :party_a, input_html: { class: "form-control"}%>
     <%= f.input :party_b, input_html: { class: "form-control"}%>

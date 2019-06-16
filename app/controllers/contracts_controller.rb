@@ -46,6 +46,6 @@ class ContractsController < ApplicationController
   private
 
   def contract_params
-    params.require(:contract).permit(:title, :party_a, :party_b, :amount, :description, :status)
+    params.require(:contract).permit(:category_id, :title, :party_a, :party_b, :amount, :description, :status)
   end
 end
