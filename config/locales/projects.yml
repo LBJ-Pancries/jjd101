@@ -1,0 +1,6 @@
+zh-CN:
+  activerecord:
+    attributes:
+      project:
+        title: 标题
+        description: 描述

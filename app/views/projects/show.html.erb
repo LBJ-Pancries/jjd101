@@ -6,6 +6,7 @@
     <% end %>
   </div>
   <h2><%= @project.title %></h2>
+  <p>(<%= t(@project.status, :scope => "project.status")%>)</p>
   <p><%= @project.description %></p>
 
   <table class="table">

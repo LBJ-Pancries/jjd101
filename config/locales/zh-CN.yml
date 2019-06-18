@@ -1,16 +1,24 @@
 "zh-CN":
+  project_list: 项目列表
   contract_list: 合同列表
+  edit_project: 编辑项目
   edit_contract: 编辑合同
+  new_project: 新增项目
   new_contract: 新增合同
   id: ID
   title: 标题
   party_b: 乙方
   amount: 总额
+  project:
+    status:
+      draft: 未启动
+      public: 进行中
+      private: 已完成
   contract:
     status:
       draft: 草稿
-      public: 公开
-      private: 私密
+      public: 执行中
+      private: 已完成
 
   admin:
     contract_list: 合同列表管理

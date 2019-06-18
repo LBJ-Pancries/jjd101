@@ -9,8 +9,7 @@
         <td>ID</td>
         <td>Category</td>
         <td><%= t("title") %></td>
-        <td><%= t("party_b")%></td>
-        <td><%= t("amount")%></td>
+        
         <td>Status</td>
         <td>Creator</td>
       </tr>
@@ -21,9 +20,8 @@
           <td><%= contract.id %></td>
           <td><%= contract.category.try(:name) %></td>
           <td><%= link_to(contract.title, contract_path(contract))%></td>
-          <td><%= contract.party_b %></td>
-          <td><%= contract.amount %></td>
-          <td><%= contract.status%></td>
+
+          <td><%= t(contract.status, :scope => "contract.status")%></td>
           <td><%= contract.user.email %></td>
           <td>
             <% if current_user && current_user == contract.user %>

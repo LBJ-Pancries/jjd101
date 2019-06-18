@@ -1,7 +1,10 @@
 en:
   hello: "Hello world"
+  project_list: Project List
   contract_list: Contract List
+  edit_project: Edit Project
   edit_contact: Edit Contract
+  new_project: New Project
   new_contract: New Contract
   id: ID
   title: Title
