@@ -1,24 +1,12 @@
 class Contract < ApplicationRecord
   belongs_to :category, :optional => true
-  STATUS = ["draft", "public", "private"]
-  validates_inclusion_of :status, :in => STATUS
 
+  validates_presence_of :title  #合同名称不得为空
   validates :title, presence: true
 
-  before_validation :generate_friendly_id, :on => :create
-
-  def to_param
-    self.friendly_id
-  end
-
   belongs_to :user
+  belongs_to :project
 
-  include RankedModel
-  ranks :row_order
-
-  protected
-
-  def generate_friendly_id
-    self.friendly_id ||= SecureRandom.uuid
-  end
-end
+  STATUS = ["draft", "public", "private"]
+  validates_inclusion_of :status, :in => STATUS
+end 

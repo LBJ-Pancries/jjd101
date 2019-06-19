@@ -1,0 +1,21 @@
+<div class="col-md-12">
+  <h2 class="text-center"></h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contracts.each do |contract| %>
+        <tr>
+          <td><%= contract.id %></td>
+          <td><%= contract.title %></td>
+          <td><%= contract.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

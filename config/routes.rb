@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
   resource :user
-  root 'projects#index'
+  root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :groups
   resources :posts
   resources :projects do
     resources :subprojects
+    resources :contracts
   end
-
-  resources :contracts
+  namespace :account do
+    resources :projects
+    resources :contracts
+  end
 
   resources :jobs do
     resources :resumes

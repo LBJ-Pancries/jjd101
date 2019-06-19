@@ -1,7 +1,7 @@
 <div class="col-md-12">
   <h2><%= t("contract_list")%></h2>
   <div class="group">
-    <%= link_to(t("new_contract"), new_contract_path, class: "btn btn-primary pull-right")%>
+    <%= link_to(t("new_contract"), new_project_contract_path, class: "btn btn-primary pull-right")%>
   </div>
   <table class="table table-hover">
     <thead>
@@ -9,7 +9,7 @@
         <td>ID</td>
         <td>Category</td>
         <td><%= t("title") %></td>
-        
+
         <td>Status</td>
         <td>Creator</td>
       </tr>

@@ -1,6 +1,7 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("Create a Subproject", new_project_subproject_path(@project), class: "btn btn-default pull-right")%>
+    <%= link_to("Create a Contract", new_project_contract_path(@project), class: "btn btn-default pull-right")%>
+
     <% if current_user && current_user == @project.user %>
       <%= link_to("Edit", edit_project_path(@project), class: "btn btn-primary pull-right")%>
     <% end %>
@@ -12,19 +13,27 @@
   <table class="table">
     <thead>
       <tr>
-        <th>单位工程名称</th>
+        <th>合同名称</th>
         <th>发表者</th>
         <th>发表时间</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <% @subprojects.each do |subproject| %>
+      <% @contracts.each do |contract| %>
         <tr>
-          <td><%= subproject.title %></td>
-          <td><%= subproject.user.email %></td>
-          <td><%= subproject.created_at %></td>
+          <td><%= link_to(contract.title, project_contract_path(contract)) %></td>
+          <td><%= contract.user.email %></td>
+          <td><%= contract.created_at %></td>
+          <td>
+            <%= link_to("Edit", edit_project_contract_path(@project, contract), class: "btn btn-sm btn-default") %>
+            <%= link_to("Delete", project_contract_path(@project, contract), :method => "delete",
+                        :data => { :confirm => "Are you sure?"}, :class => "btn btn-danger")%>
+          </td>
+
         </tr>
       <% end %>
+
     </tbody>
   </table>
 </div>

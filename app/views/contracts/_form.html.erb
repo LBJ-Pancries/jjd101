@@ -1,6 +1,5 @@
-<%= simple_form_for @contract do |f| %>
-  <div class="form-contract">
-    <%= f.association :category %>
+<div class="form-contract">
+  <%= simple_form_for [@project, @contract] do |f| %>
     <%= f.input :title, input_html: { class: "form-control"}%>
     <%= f.input :party_a, input_html: { class: "form-control"}%>
     <%= f.input :party_b, input_html: { class: "form-control"}%>
@@ -13,10 +12,10 @@
         <%= t(status, :scope => "contract.status")%>
       </label>
     <% end %>
-  </div>
-  <br>
-  <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..."}%>
-<% end %>
+    <br>
+    <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary"%>
+  <% end %>
+</div>
 
 <script>
   $("#contract_category_id").select2( { theme: "bootstrap"})

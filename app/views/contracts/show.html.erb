@@ -1,10 +1,10 @@
 <div class="col-md-12">
   <div class="group">
     <% if current_user && current_user == @contract.user %>
-      <%= link_to("Edit", edit_contract_path(@contract), class: "btn btn-primary pull-right")%>
+      <%= link_to("Edit", edit_project_contract_path(@contract), class: "btn btn-primary pull-right")%>
     <% end %>
   </div>
-  <h2><%= @contract.category.name %><%= @contract.title %>(<%= t(@contract.status, :scope => "contract.status")%>)</h2>
+  <h2><%= @contract.title %>(<%= t(@contract.status, :scope => "contract.status")%>)</h2>
   <h2></h2>
 
   <p><%= @contract.party_a %></p>

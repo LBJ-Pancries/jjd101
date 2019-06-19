@@ -10,6 +10,7 @@
         <td>Title</td>
         <td>Status</td>
         <td>Creator</td>
+        <td>Actions</td>
       </tr>
     </thead>
     <tbody>
@@ -20,9 +21,10 @@
         <td><%= project.status %></td>
         <td><%= project.user.email %></td>
         <td>
+          <%= link_to "Contracts", project_path(project), :class => "btn btn-default"%>
           <% if current_user && current_user == project.user %>
             <%= link_to("Edit", edit_project_path(project), class: "btn btn-sm btn-default")%>
-            <%= link_to("Delete", project_path(project), class: "btn btn-sm btn-default",
+            <%= link_to("Delete", project_path(project), class: "btn btn-danger",
                         method: :delete, data: { confirm: "Are you sure?"} )%>
           <% end %>
         </td>
