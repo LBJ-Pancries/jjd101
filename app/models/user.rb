@@ -13,10 +13,9 @@ class User < ApplicationRecord
   has_many :resumes
   has_many :orders
   has_many :projects
+  has_many :subprojects
   has_many :contracts
   has_many :posts
-
-  has_many :subprojects
 
   has_many :memberships
   has_many :groups, :through => :memberships

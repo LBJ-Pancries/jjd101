@@ -25,6 +25,7 @@ class ContractsController < ApplicationController
   end
 
   def create
+    @project = Project.find(params[:project_id])
     @contract = Contract.new(contract_params)
     @contract.project = @project
     @contract.user = current_user

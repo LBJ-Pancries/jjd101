@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   namespace :account do
     resources :projects
+    resources :subprojects
     resources :contracts
   end
 

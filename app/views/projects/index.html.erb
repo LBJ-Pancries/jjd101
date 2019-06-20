@@ -6,7 +6,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>#</td>
+        <td>ID</td>
         <td>Title</td>
         <td>Status</td>
         <td>Creator</td>
@@ -16,12 +16,12 @@
     <tbody>
       <% @projects.each do |project| %>
       <tr>
-        <td>#</td>
+        <td><%= project.id %></td>
         <td><%= link_to(project.title, project_path(project))%></td>
         <td><%= project.status %></td>
         <td><%= project.user.email %></td>
         <td>
-          <%= link_to "Contracts", project_path(project), :class => "btn btn-default"%>
+          <%= link_to("Subprojects", project_path(project), :class => "btn btn-default")%>
           <% if current_user && current_user == project.user %>
             <%= link_to("Edit", edit_project_path(project), class: "btn btn-sm btn-default")%>
             <%= link_to("Delete", project_path(project), class: "btn btn-danger",
