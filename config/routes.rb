@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :groups
   resources :posts
   resources :projects do
-    resources :subprojects
-    resources :contracts
+    resources :subprojects do
+      resources :contracts
+    end
   end
   namespace :account do
     resources :projects

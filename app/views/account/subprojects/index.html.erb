@@ -1,10 +1,9 @@
 <div class="col-md-12">
-  <h2 class="text-center">我发出的项目</h2>
+  <h2 class="text-center">我的分部工程</h2>
   <table class="table">
     <thead>
       <tr>
         <th>ID</th>
-        <th>Project Name</th>
         <th>Title</th>
         <th colspan="2"></th>
       </tr>
@@ -13,8 +12,8 @@
       <% @subprojects.each do |subproject| %>
         <tr>
           <td><%= subproject.id %></td>
-          <td><%= subproject.project.title %></td>
-          <td><%= subproject.title %></td>
+          
+          <td><%= subproject.title %>（<%= subproject.project.title %>）</td>
           <td><%= link_to("Edit", edit_project_subproject_path(subproject.project, subproject), class: "btn btn-default btn-xs")%></td>
           <td><%= link_to("Deleted", project_subproject_path(subproject.project, subproject), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-default btn-xs") %></td>
         </tr>
