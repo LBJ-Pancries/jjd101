@@ -5,15 +5,15 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :groups
   resources :posts
-  resources :projects do
-    resources :subprojects do
-      resources :contracts
-    end
-  end
+  resources :companies
+  resources :contracts
+  resources :projects
+
   namespace :account do
     resources :projects
     resources :subprojects
     resources :contracts
+    resources :companies
   end
 
   resources :jobs do
@@ -34,6 +34,8 @@ Rails.application.routes.draw do
     resources :contracts
     resources :products
     resources :groups
+    resources :projects
+    resources :subprojects
     resources :users do
       resource :profile, :controller => "user_profile"
     end

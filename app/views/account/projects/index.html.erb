@@ -1,14 +1,6 @@
 <div class="col-md-12">
   <h2 class="text-center">我的单项工程</h2>
-  <p>
-    作为一个工程经理，需要做以下工作：施工管理、施工成本管理、施工进度管理、施工质量管理、
-    施工职业健康安全与环境管理、施工合同管理、施工信息管理;
-    <br>
-    建筑工程项目施工管理：单位工程施工组织设计、施工进度管理、施工质量管理、施工安全管理、
-    施工招投标管理、造价与成本管理、施工现场管理、验收管理;
-    <br>
-    施工组织设计要求工程经理对施工合同、招投标文件、设计文件、以及现场实际情况进行编制;
-  </p>
+  
   <table class="table">
     <thead>
       <tr>
@@ -22,7 +14,7 @@
       <% @projects.each do |project| %>
         <tr>
           <td><%= project.id %></td>
-          <td><%= link_to(project.title, project_path(project)) %></td>
+          <td><%= project.title %></td>
           <td><%= project.status %></td>
         </tr>
       <% end %>
