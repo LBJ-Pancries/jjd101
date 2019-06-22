@@ -1,29 +1,25 @@
 <div class="col-md-12">
   <h2><%= t("contract_list")%></h2>
   <div class="group">
-    <%= link_to(t("new_contract"), new_project_contract_path, class: "btn btn-primary pull-right")%>
+    <%= link_to(t("new_contract"), new_contract_path, class: "btn btn-primary pull-right")%>
   </div>
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>ID</td>
-        <td>Category</td>
-        <td><%= t("title") %></td>
-
-        <td>Status</td>
-        <td>Creator</td>
+        <th>ID</th>
+        <th><%= t("title") %></th>
+        <th>Status</th>
+        <th>Aciton</th>
       </tr>
     </thead>
     <tbody>
       <% @contracts.each do |contract| %>
         <tr>
           <td><%= contract.id %></td>
-          <td><%= contract.category.try(:name) %></td>
-          <td><%= link_to(contract.title, contract_path(contract))%></td>
-
+          <td><%= contract.project.title %><%= contract.title %>合同</td>
           <td><%= t(contract.status, :scope => "contract.status")%></td>
-          <td><%= contract.user.email %></td>
           <td>
+            <%= link_to("Show", contract_path(contract), class: "btn btn-sm btn-default") %>
             <% if current_user && current_user == contract.user %>
               <%= link_to("Edit", edit_contract_path(contract), class: "btn btn-sm btn-default")%>
               <%= link_to("Delete", contract_path(contract), class: "btn btn-sm btn-default",

@@ -1,6 +1,6 @@
 class Admin::ProjectsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-
+  layout 'admin'
   def index
     @projects = Project.all
   end
@@ -14,7 +14,7 @@ class Admin::ProjectsController < ApplicationController
     @project.user = current_user
 
     if @project.save
-      redirect_to projects_path
+      redirect_to admin_projects_path
     else
       render :new
     end
@@ -22,7 +22,6 @@ class Admin::ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @subprojects = @project.subprojects
   end
 
   def edit
@@ -32,7 +31,7 @@ class Admin::ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update(project_params)
-      redirect_to projects_path, notice: "Update Success"
+      redirect_to admin_projects_path, notice: "Update Success"
     else
       render :edit
     end
@@ -41,7 +40,7 @@ class Admin::ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-    redirect_to projects_path, alert: "Project deleted"
+    redirect_to admin_projects_path, alert: "Project deleted"
   end
 
   private

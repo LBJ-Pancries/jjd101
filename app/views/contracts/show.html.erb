@@ -1,9 +1,16 @@
 <div class="col-md-12">
-  <h2><%= @contract.title %>(<%= t(@contract.status, :scope => "contract.status")%>)</h2>
-  <h2></h2>
+  <h2>
+    <%= @contract.project.title %>
+    <%= @contract.title %>
+    (<%= t(@contract.status, :scope => "contract.status")%>)
+  </h2>
 
   <p>甲方：<%= @contract.party_a %></p>
   <p>乙方：<%= @contract.party_b %></p>
+  <p>联系人：<%= @contract.linkman %></p>
+  <p>联系电话：<%= @contract.contact_number %></p>
   <p>合同金额：<%= @contract.amount %></p>
+  <p>已支付：<%= @contract.paid %></p>
+  <p>未支付：<%= @contract.unpaid %></p>
   <p>合同条款：<%= @contract.description %></p>
 </div>

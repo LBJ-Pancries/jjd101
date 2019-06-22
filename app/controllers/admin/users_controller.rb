@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   layout "admin"
 
   def index
-    @users = User.includes(:groups).all
+    @users = User.all
   end
 
   def edit
