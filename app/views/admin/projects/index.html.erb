@@ -3,14 +3,24 @@
 </div>
 <br><br>
 <table class="table table-hover">
+  <tr>
+    <th>ID</th>
+    <th>ProjectContract</th>
+    <th>Project</th>
+    <th>Email</th>
+    <th>Action</th>
+  </tr>
   <% @projects.each do |project| %>
   <tr>
     <td><%= project.id %></td>
+    <td><%= link_to(project.title, admin_project_contracts_path(project))%></td>
     <td><%= link_to(project.title, admin_project_path(project))%></td>
-    <td><%= project.description %></td>
+
     <td><%= project.user.email %></td>
     <td>
       <% if current_user && current_user == project.user %>
+        <%= link_to("Contracts", admin_project_contracts_path(project), :class => "btn btn-default")%>
+        <%= link_to("Subprojects", admin_project_subprojects_path(project), :class => "btn btn-default")%>
         <%= link_to("Edit", edit_admin_project_path(project), class: "btn btn-sm btn-default")%>
         <%= link_to("Delete", admin_project_path(project), class: "btn btn-sm btn-default",
                     method: :delete, data: { confirm: "Are you sure?"} )%>

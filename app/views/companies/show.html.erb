@@ -3,5 +3,7 @@
     <%= link_to("Edit", edit_company_path(@company), class: "btn btn-primary pull-right")%>
   </div>
   <h2><%= @company.title %></h2>
+  <p>联系人：<%= @company.linkman %></p>
+  <p>联系电话：<%= @company.contact_number %></p>
   <p><%= @company.description %></p>
 </div>

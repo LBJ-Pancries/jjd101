@@ -1,0 +1,9 @@
+<%= f.fields_for :subprojects do |ff| %>
+  <fieldset style="border-left: 5px solid #bbb; margin-bottom: 10px; padding: 10px;">
+    <legend>Subproject</legend>
+    <div class="form-group">
+      <%= ff.label :title %>
+      <%= ff.text_field :title, :class => "form-control" %>
+    </div>
+  </fieldset>
+<% end %>

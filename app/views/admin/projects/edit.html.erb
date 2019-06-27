@@ -5,6 +5,22 @@
       <%= f.input :title, input_html: { class: "form-control"} %>
       <%= f.input :description, input_html: { class: "form-control"} %>
     </div>
+
+    <%= f.nested_fields_for :subprojects do |ff| %>
+      <fieldset style="border-left: 5px solid #bbb; margin-bottom: 10px; padding: 10px;">
+        <legend>Subproject</legend>
+        <div class="form-group">
+          <%= ff.label :title %>
+          <%= ff.text_field :title, :class => "form-control" %>
+        </div>
+      </fieldset>
+      <%= ff.remove_nested_fields_link "移除这个工程", :class => "btn btn-danger"%>
+    <% end %>
+
+    <p class="text-right">
+      <%= f.add_nested_fields_link :subprojects, "新增工程", :class => "btn btn-default"%>
+    </p>
+
     <div class="form-actions">
       <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary"%>
     </div>

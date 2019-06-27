@@ -1,4 +1,8 @@
 "zh-CN":
+  contract:
+    status:
+      pending: 合同未签
+      confirmed: 合同已签
   project_list: 项目列表
   contract_list: 合同列表
   edit_project: 编辑项目

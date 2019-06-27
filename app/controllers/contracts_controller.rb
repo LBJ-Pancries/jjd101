@@ -1,49 +1,36 @@
 class ContractsController < ApplicationController
-
-  def index
-    @contracts = Contract.all
-  end
-
-  def show
-    @contract = Contract.find(params[:id])
-  end
-
-  def edit
-    @contract = Contract.find(params[:id])
-  end
-
-  def update
-    @contract = Contract.find(params[:id])
-    if @contract.update(contract_params)
-      redirect_to contracts_path, notice: "Update Success"
-    else
-      render :edit
-    end
-  end
+  before_action :find_project
 
   def new
     @contract = Contract.new
   end
 
   def create
-    @contract = Contract.new(contract_params)
+
+    @contract = @project.contracts.new(contract_params)
+    @contract.subproject = @project.subprojects.find( params[:contract][:subproject_id] )
+    @contract.status = "confirmed"
     @contract.user = current_user
+
     if @contract.save
-      redirect_to contracts_path
+      redirect_to project_contract_path(@project, @contract)
     else
-      render :new
+      render "new"
     end
   end
 
-  def destroy
-    @contract = Contract.find(params[:id])
-    @contract.destroy
-    redirect_to contracts_path, alert: "Contract deleted"
+  def show
+    @contract = @project.contracts.find(params[:id])
   end
 
-  private
+  protected
 
   def contract_params
-    params.require(:contract).permit(:title, :party_a, :party_b, :amount, :paid, :unpaid, :linkman, :contact_number, :description, :status, :project_id)
+    params.require(:contract).permit(:status, :subprojec_id, :title, :party_a, :party_b, :amount, :description, :company_id)
   end
+
+  def find_project
+    @project = Project.find(params[:project_id])
+  end
+
 end

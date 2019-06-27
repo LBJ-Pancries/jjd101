@@ -1,0 +1,26 @@
+<h1><%= @project.title %>/ 合同</h1>
+
+<p class="text-right">
+<%= link_to "New Contract", new_admin_project_contract_path(@project), :class => "btn btn-primary" %>
+</p>
+
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Status</th>
+    <th>建立时间</th>
+    <th>Actions</th>
+  </tr>
+  <% @contracts.each do |contract| %>
+    <tr>
+      <td><%= contract.id %></td>
+      <td><%= contract.subproject.title %></td>
+      <td><%= t( contract.status, :scope => "contract.status") %></td>
+      <td><%= contract.created_at %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_project_contract_path(@project, contract), :class => "btn btn-default" %>
+        <%= link_to "Delete", admin_project_contract_path(@project, contract), :method => "delete", :data => { :confirm => "Are you sure?" }, :class => "btn btn-danger" %>
+    </tr>
+  <% end %>
+</table>

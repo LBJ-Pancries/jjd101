@@ -1,7 +1,14 @@
 <div class="col-md-12">
   <h2><%= t("contract_list")%></h2>
-  <div class="group">
-    <%= link_to(t("new_contract"), new_contract_path, class: "btn btn-primary pull-right")%>
+  <div class="submenu">
+    <div class="submenu">
+      <div class="btn-group">
+        <%= link_to "全部 (#{@contracts.size})", contracts_path(contract_filters(:status => nil)), :class => "btn btn-success btn-group #{(params[:status].blank?) ?  "active" : ""}"%>
+        <% Contract::STATUS.each do |s| %>
+          <%= link_to t(s, :scope => "contract.status") + "(#{@contracts.by_status(s).size})", contracts_path(contract_filters(:status => s)), :class => "btn btn-success btn-group #{ (params[:status] == s) ? "active" : ""}"%>
+        <% end %>
+      </div>
+    </div>
   </div>
   <table class="table table-hover">
     <thead>
@@ -9,7 +16,8 @@
         <th>ID</th>
         <th><%= t("title") %></th>
         <th>Status</th>
-        <th>Aciton</th>
+        <th>Action</th>
+        <th>Amount</th>
       </tr>
     </thead>
     <tbody>
@@ -20,15 +28,21 @@
           <td><%= t(contract.status, :scope => "contract.status")%></td>
           <td>
             <%= link_to("Show", contract_path(contract), class: "btn btn-sm btn-default") %>
-            <% if current_user && current_user == contract.user %>
-              <%= link_to("Edit", edit_contract_path(contract), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", contract_path(contract), class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "Are you sure?"})%>
-            <% end %>
           </td>
-          <td><%= contract.created_at.to_s %></td>
+          <td><%= contract.amount %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
+  <div class="total clearfix">
+    <span class="pull-right">
+      <span>
+        <% sum = 0 %>
+        <% @contracts.each do |c| %>
+          <% sum = sum + c.amount %>
+        <% end %>
+        总计：<%= sum %> RMB
+      </span>
+    </span>
+  </div>
 </div>

@@ -4,30 +4,39 @@ u.password = "123456"
 u.password_confirmation = "123456"
 u.is_admin = true
 u.save
-puts "管理员创建"
+puts "管理员创建完"
 
-Category.create(name: "A1户型")
-Category.create(name: "A2户型")
-Category.create(name: "A3户型")
-Category.create(name: "B1户型")
-Category.create(name: "B2户型")
-Category.create(name: "B3户型")
-Category.create(name: "C1一层户型")
-Category.create(name: "C2二层户型")
+Project.create(title: "微民宿三期")
+Project.create(title: "微民宿四期")
+Project.create(title: "三市七坊")
+puts "项目创建完"
+
+Subproject.create(title: "空调采购安装工程", project_id: "1")
+Subproject.create(title: "地暖采购安装工程", project_id: "2")
+Subproject.create(title: "洁具采购安装工程", project_id: "3")
+Subproject.create(title: "铝合金门窗采购安装工程", project_id: "1")
+puts "工程创建完"
+
+Company.create(title: "昆山乡伴计家墩文化发展有限公司", linkman: "朱胜萱", contact_number: "0512-57228853")
+Company.create(title: "江苏乡伴置业发展有限公司", linkman: "朱胜萱", contact_number: "0512-57228853")
+Company.create(title: "昆山原舍祝甸酒店管理有限公司", linkman: "朱胜萱", contact_number: "0512-57228853")
+puts "公司创建完"
+
+Category.create(name: "房型")
 Category.create(name: "木地板")
 Category.create(name: "电器")
 Category.create(name: "开关")
 Category.create(name: "灯具")
+puts "类别创建完"
 
-
-Product.create(title: "A1户型", code: "54平米", description: "2、3、5、6#楼一层 水磨石面积：27.84 木地板面积：15.21+3.3 南侧临水驳岸：14平方 北侧入户花园面积：15平方 客厅层高：2.4米", quantity: "8", category_id: "1")
-Product.create(title: "A2户型", code: "51平米", description: "2、3、5#楼二层 南侧临水阳台面积：9平方 餐厅层高：2.4米", quantity: "6")
-Product.create(title: "A3户型", code: "40平米", description: "2、3、5#楼三层 南侧露台：12平方 餐厅层高：2.4米", quantity: "6")
-Product.create(title: "C1户型一层", code: "51平米", description: "6#楼二层 餐厅层高：2.4米 阳台面积：9平方", quantity: "2")
-Product.create(title: "C1户型二层", code: "36平米", description: "6#楼三层 露台面积：12平方", quantity: "2")
-Product.create(title: "B1户型", code: "50平米", description: "1、4#楼一层 水磨石面积：20.86 木地板面积：17.62 南侧驳岸面积：30平方 客厅层高：2.4米", quantity: "4")
-Product.create(title: "B2户型", code: "52平米", description: "1、4#楼二层， 水磨石面积：25.86+8.05， 木地板面积：12.47 餐厅层高：2.4米 阳台面积：11平方", quantity: "8")
-Product.create(title: "B3户型", code: "82平米", description: "1、4#楼三层 水磨石面积：32.4+17.19 木地板面积：28.37 客厅层高：2.4米 北侧露台面积：18平方", quantity: "4")
+Product.create(title: "A1户", code: "54平米", description: "2、3、5、6#楼一层 水磨石面积：27.84 木地板面积：15.21+3.3 南侧临水驳岸：14平方 北侧入户花园面积：15平方 客厅层高：2.4米", quantity: "8", category_id: "1")
+Product.create(title: "A2户", code: "51平米", description: "2、3、5#楼二层 南侧临水阳台面积：9平方 餐厅层高：2.4米", quantity: "6", category_id: "1")
+Product.create(title: "A3户", code: "40平米", description: "2、3、5#楼三层 南侧露台：12平方 餐厅层高：2.4米", quantity: "6", category_id: "1")
+Product.create(title: "C1户一层", code: "51平米", description: "6#楼二层 餐厅层高：2.4米 阳台面积：9平方", quantity: "2", category_id: "1")
+Product.create(title: "C1户二层", code: "36平米", description: "6#楼三层 露台面积：12平方", quantity: "2", category_id: "1")
+Product.create(title: "B1户", code: "50平米", description: "1、4#楼一层 水磨石面积：20.86 木地板面积：17.62 南侧驳岸面积：30平方 客厅层高：2.4米", quantity: "4", category_id: "1")
+Product.create(title: "B2户", code: "52平米", description: "1、4#楼二层， 水磨石面积：25.86+8.05， 木地板面积：12.47 餐厅层高：2.4米 阳台面积：11平方", quantity: "8", category_id: "1")
+Product.create(title: "B3户", code: "82平米", description: "1、4#楼三层 水磨石面积：32.4+17.19 木地板面积：28.37 客厅层高：2.4米 北侧露台面积：18平方", quantity: "4", category_id: "1")
 Product.create(title: "油烟机", description: "方太 产品型号 EM05 性能参数 最大风量（m3/min） 15 外观参数 烟机款式 欧式 开关/按键 机械按键 材质/工艺 不锈钢＋不沾油涂层 安装参数 外形尺寸（mm） 长900×宽530×高595", quantity: "38")
 Product.create(title: "热水器", description: "林内", quantity: "38")
 Product.create(title: "空调", description: "格力", quantity: "38")
@@ -58,5 +67,4 @@ Product.create(title: "一位电视插座", code: "S2600-5111", description: "�
 Product.create(title: "二位网络插座", code: "S0400-1223", description: "西蒙", quantity: "1")
 Product.create(title: "五孔地插", code: "S0405-1201", description: "西蒙", quantity: "2")
 Product.create(title: "LED灯带", code: "N0704-0001", description: "西蒙", quantity: "28")
-
 puts "商品创建完"

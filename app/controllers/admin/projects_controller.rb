@@ -7,6 +7,8 @@ class Admin::ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @project.subprojects.build
+
   end
 
   def create
@@ -22,10 +24,14 @@ class Admin::ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+
   end
 
   def edit
     @project = Project.find(params[:id])
+    @project.subprojects.build
+    @project.subprojects.build if @project.subprojects.empty?
+
   end
 
   def update
@@ -46,6 +52,6 @@ class Admin::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :status)
+    params.require(:project).permit(:title, :description, :status, :subprojects_attributes => [:id, :title, :_destroy])
   end
 end

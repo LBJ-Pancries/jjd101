@@ -1,53 +1,52 @@
 <html>
-<head>
-		<title>后台</title>
-		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-stack' => true %>
-		<%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <%= render "common/admin.navbar" %>
-    </div>
-    <div class="content">
-			<ul class="nav nav-tabs">
-				<li class="active" role="presentaton"><%= link_to("Groups", admin_groups_path)%></li>
+	<head>
+			<title>后台</title>
+			<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+			<%= javascript_include_tag 'application', 'data-turbolinks-stack' => true %>
+			<%= csrf_meta_tags %>
+	</head>
+	<body>
+	  <div class="container-fluid">
+	    <div class="row">
+	      <%= render "common/admin.navbar" %>
+	    </div>
+	    <div class="content">
+				<ul class="nav nav-tabs">
+					<li class="active" role="presentaton"><%= link_to("Companies", admin_companies_path)%></li>
+					<li role="presentation" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							用户管理 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><%= link_to("Groups", admin_groups_path)%></li>
+							<li><%= link_to("User", admin_users_path)%></li>
+						</ul>
+					</li>
+					<li role="presentation" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							产品管理 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><%= link_to("Products", admin_products_path ) %></li>
+							<li><%= link_to("Categories", admin_categories_path)%></li>
+						</ul>
+					</li>
+					<li role="presentation" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							工程管理 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><%= link_to("Projects", admin_projects_path)%></li>
 
-
-				<li role="presentation" class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-						用户管理 <span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><%= link_to("Groups", admin_groups_path)%></li>
-						<li><%= link_to("用户管理", admin_users_path)%></li>
-					</ul>
-				</li>
-				<li role="presentation" class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-						产品管理 <span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><%= link_to("Products", admin_products_path ) %></li>
-						<li><%= link_to("Categories", admin_categories_path)%></li>
-					</ul>
-				</li>
-				<li role="presentation" class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-						工程管理 <span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><%= link_to("Projects", admin_projects_path)%></li>
-						<li><%= link_to("Subprojects", admin_subprojects_path)%></li>
-					</ul>
-				</li>
-			</ul>
-			<%= render "common/flashes" %>
-			<br>
-	    <%= yield %>
-    </div>
-  </div>
+							<li><%= link_to("Contracts")%></li>
+						</ul>
+					</li>
+				</ul>
+				<%= render "common/flashes" %>
+				<br>
+		    <%= yield %>
+	    </div>
+	  </div>
 		<%= render "common/footer"%>
-</body>
+	</body>
 </html>

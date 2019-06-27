@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :contracts
   resource :user
-  root 'contracts#index'
+  root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :groups
   resources :posts
@@ -27,6 +26,7 @@ Rails.application.routes.draw do
       post :add_to_cart
     end
   end
+
   resources :carts do
     collection do
       post :clean
@@ -34,11 +34,13 @@ Rails.application.routes.draw do
     end
   end
   namespace :admin do
-    resources :contracts
     resources :products
     resources :groups
-    resources :projects
-    resources :subprojects
+    resources :projects do
+      resources :subprojects, :controller => "project_subprojects"
+      resources :contracts, :controller => "project_contracts"
+    end
+    resources :companies
     resources :users do
       resource :profile, :controller => "user_profile"
     end

@@ -16,7 +16,6 @@ class User < ApplicationRecord
   has_many :subprojects
   has_many :contracts
   has_many :posts
-
   has_many :memberships
   has_many :groups, :through => :memberships
 

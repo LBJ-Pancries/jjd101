@@ -1,2 +1,24 @@
 <h2><%= @project.title %></h2>
 <p><%= simple_format(@project.description)%></p>
+<p><%= link_to "添加合同", new_project_contract_path(@project), :class => "btn btn-primary" %></p>
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Subroject</th>
+    <th>Title</th>
+    <th>Status</th>
+
+    <th>建立时间</th>
+    
+  </tr>
+  <% @contracts.each do |contract| %>
+    <tr>
+      <td><%= contract.id %></td>
+      <td><%= link_to contract.subproject.title, project_contract_path(@project, contract) %></td>
+      <td><%= contract.title %></td>
+      <td><%= t( contract.status, :scope => "contract.status") %></td>
+
+      <td><%= contract.created_at %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,7 +1,9 @@
 class Subproject < ApplicationRecord
-  belongs_to :user
-  belongs_to :project
-  has_many :companies
-
   validates :title, presence: true
+  belongs_to :project
+
+  belongs_to :user
+
+  has_many :contracts
+
 end

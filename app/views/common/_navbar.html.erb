@@ -39,16 +39,23 @@
             </a>
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
-                <li><%= link_to("Admin Panel", admin_products_path)%></li>
+                <li><%= link_to("Admin Projects", admin_projects_path)%></li>
               <% end %>
               <li><%= link_to("修改个人资料", edit_user_path )%></li>
               <li><%= link_to("个人订单列表", account_orders_path)%></li>
-
+              <li><%= link_to("中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN") %></li>
+              <li><%= link_to("English", :controller => controller_name, :action => action_name, :locale => "en") %></li>
               <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>
         <% end %>
 			</ul>
 		</div>
+    <ul class="nav nav-tabs">
+      <li role="presentaton" class="active"><a><%= link_to "Home", root_path %></a> </li>
+      <li role="presentation"><a><%= link_to "Projects", projects_path %></a></li>
+      <li role="presentation"><a><%= link_to "Companies", companies_path %></a></li>
+      <li role="presentation"><a><%= link_to "Products", products_path %></a></li>
+    </ul>
 	</div>
 </nav>

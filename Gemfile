@@ -37,6 +37,7 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'select2-rails'
 gem 'ranked-model'
+gem 'nested_form_fields'
 
 
 group :development, :test do
